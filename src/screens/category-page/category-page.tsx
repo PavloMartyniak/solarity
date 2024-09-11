@@ -12,7 +12,13 @@ export const CategoryPage = () => {
 
   return (
     <Flex direction="column" gap={6}>
-      <Flex onClick={onOpen} justifyContent="end" cursor="pointer" gap={2}>
+      <Flex
+        w="fit-content"
+        onClick={onOpen}
+        justifyContent="end"
+        cursor="pointer"
+        gap={2}
+      >
         <Text fontSize={18} fontWeight={600}>
           Filters
         </Text>

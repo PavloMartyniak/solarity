@@ -3,6 +3,7 @@
 import { ProductCard } from "@/components/product-card";
 import { ProductFilterDrawer } from "@/components/product-filter-drawer";
 import { product_data_mocked } from "@/lib/mocked-data/products";
+import { useGetProducts } from "@/lib/queries/products";
 import { Flex, Icon, Text, useDisclosure } from "@chakra-ui/react";
 import React from "react";
 import { TbArrowsShuffle } from "react-icons/tb";
@@ -12,9 +13,17 @@ export const HomePage = () => {
 
   const { isOpen, onOpen, onClose } = useDisclosure();
 
+  const { data: products } = useGetProducts();
+
   return (
     <Flex direction="column" gap={6}>
-      <Flex onClick={onOpen} justifyContent="end" cursor="pointer" gap={2}>
+      <Flex
+        w="fit-content"
+        onClick={onOpen}
+        justifyContent="end"
+        cursor="pointer"
+        gap={2}
+      >
         <Text fontSize={18} fontWeight={600}>
           Filters
         </Text>
