@@ -1,3 +1,4 @@
 export enum API {
-  PRODUCTS = "/todos",
+  PRODUCTS = "/catalog/products",
+  CATEGORIES = "/catalog/categories",
 }

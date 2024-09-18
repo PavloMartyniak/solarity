@@ -1,10 +1,17 @@
+"use client";
+
 import { CategoryCard } from "@/components/category-card";
-import { categories_data_mocked } from "@/lib/mocked-data/categories";
+import { ProductCardSkeleton } from "@/components/ui/product-card-skeleton/product-card-sekeleton";
+import { useGetCategories } from "@/lib/queries/categories";
+import { Category } from "@/lib/types/category";
 import { Flex } from "@chakra-ui/react";
 import React from "react";
 
 export const CategoriesPage = () => {
-  const data = categories_data_mocked;
+  const { data, isLoading } = useGetCategories();
+
+  const categories = data?.results as Category[];
+
   return (
     <Flex
       flexWrap="wrap"
@@ -12,9 +19,13 @@ export const CategoriesPage = () => {
       w="full"
       justifyContent={{ base: "center", lg: "normal" }}
     >
-      {data.map((item, idx) => (
-        <CategoryCard key={`product-card-${idx}`} data={item} />
-      ))}
+      {isLoading ? (
+        <ProductCardSkeleton />
+      ) : (
+        categories?.map((item, idx) => (
+          <CategoryCard key={`product-card-${idx}`} data={item} />
+        ))
+      )}
     </Flex>
   );
 };

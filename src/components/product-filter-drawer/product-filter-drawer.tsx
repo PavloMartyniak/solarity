@@ -84,7 +84,6 @@ export const ProductFilterDrawer = ({
                 control={control}
                 name="category"
                 render={({ field }) => {
-                  console.log("field", field);
                   return (
                     <SelectField
                       options={categoriesOptions}

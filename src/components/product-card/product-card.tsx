@@ -11,21 +11,19 @@ import {
   Text,
 } from "@chakra-ui/react";
 import Link from "next/link";
-import { formatRoute } from "@/lib/helpers/route-formater";
 import { Routes } from "@/lib/constants";
 
 export const ProductCard: React.FC<ProductCardProps> = ({ data }) => {
   return (
     <Card
       as={Link}
-      href={`${Routes.PRODUCTS}/${formatRoute(data.title)}`}
+      href={`${Routes.PRODUCTS}/${data?.id}`}
       cursor="pointer"
-      maxW={{ base: "18rem", lg: "24rem" }}
-      w="full"
+      w={{ base: "18rem", lg: "24rem" }}
     >
       <CardHeader>
         <Text maxW="20rem" fontSize={{ base: "lg", md: "xl" }}>
-          {data.title}
+          {data.name}
         </Text>
       </CardHeader>
       <CardBody
@@ -34,17 +32,19 @@ export const ProductCard: React.FC<ProductCardProps> = ({ data }) => {
         justifyContent="center"
         alignItems="center"
       >
-        <Image w={220} src={data.images[0]} alt="product image" />
+        <Image w={220} src={data?.images[0]?.image} alt="product image" />
       </CardBody>
       <CardFooter
         display="flex"
         alignItems="center"
         justifyContent="space-between"
       >
-        <Text fontSize={{ base: "lg", md: "xl" }}>{`${data.price.toFixed(
-          2
-        )} $`}</Text>
-        <Button variant="secondary">Buy it</Button>
+        {data?.price ? (
+          <Text fontSize={{ base: "lg", md: "xl" }}>{data?.price + "$"}</Text>
+        ) : null}
+        <Button ml="auto" variant="secondary">
+          Buy it
+        </Button>
       </CardFooter>
     </Card>
   );

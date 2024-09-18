@@ -15,7 +15,7 @@ export const Providers: React.FC<PropsWithChildren> = ({ children }) => {
       <QueryClientProvider client={queryClient}>
         <Flex direction="column" bgColor="gray.1">
           <Header />
-          <Flex py={6} px={{ base: 12, md: 24 }}>
+          <Flex py={6} px={{ base: 12, md: 24 }} flex={1}>
             {children}
           </Flex>
         </Flex>

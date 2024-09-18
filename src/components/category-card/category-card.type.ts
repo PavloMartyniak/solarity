@@ -1,8 +1,5 @@
-import { Product } from "@/lib/types/product";
+import { Category } from "@/lib/types/category";
 
 export type CategoryCardProps = {
-  data: {
-    title: string;
-    image: string;
-  };
+  data: Category;
 };

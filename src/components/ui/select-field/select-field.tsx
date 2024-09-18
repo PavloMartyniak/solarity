@@ -1,7 +1,7 @@
 "use client";
 
+import { ChevronDownIcon } from "@chakra-ui/icons";
 import {
-  Icon,
   InputGroup,
   InputRightElement,
   Menu,
@@ -11,9 +11,8 @@ import {
   Text,
 } from "@chakra-ui/react";
 import React, { memo, useEffect, useState } from "react";
-import { Option, SelectFieldProps } from "./select-field.type";
-import { ChevronDownIcon } from "@chakra-ui/icons";
 import { Input } from "../Input";
+import { Option, SelectFieldProps } from "./select-field.type";
 
 const SelectField: React.FC<SelectFieldProps> = ({
   placeholder,

@@ -1,14 +1,18 @@
 "use client";
 import { ProductCard } from "@/components/product-card";
 import { ProductFilterDrawer } from "@/components/product-filter-drawer";
-import { product_data_mocked } from "@/lib/mocked-data/products";
+import { ProductCardSkeleton } from "@/components/ui/product-card-skeleton/product-card-sekeleton";
+import { useGetProducts } from "@/lib/queries/products";
+import { Product } from "@/lib/types/product";
 import { Flex, Icon, Text, useDisclosure } from "@chakra-ui/react";
-import React from "react";
 import { TbArrowsShuffle } from "react-icons/tb";
 
 export const CategoryPage = () => {
-  const data = product_data_mocked;
   const { isOpen, onOpen, onClose } = useDisclosure();
+
+  const { data, isLoading } = useGetProducts();
+
+  const products = data?.results as Product[];
 
   return (
     <Flex direction="column" gap={6}>
@@ -29,9 +33,13 @@ export const CategoryPage = () => {
         justifyContent={{ base: "center", xl: "normal" }}
         gap={6}
       >
-        {data.map((item, idx) => (
-          <ProductCard key={`category-product-card-${idx}`} data={item} />
-        ))}
+        {isLoading ? (
+          <ProductCardSkeleton />
+        ) : (
+          products?.map((item, idx) => (
+            <ProductCard key={`category-product-card-${idx}`} data={item} />
+          ))
+        )}
       </Flex>
       <ProductFilterDrawer onClose={onClose} isOpen={isOpen} />
     </Flex>

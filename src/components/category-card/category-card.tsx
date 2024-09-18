@@ -1,25 +1,16 @@
 "use client";
 import React from "react";
 import { CategoryCardProps } from "./category-card.type";
-import {
-  Button,
-  Card,
-  CardBody,
-  CardFooter,
-  Image,
-  Text,
-} from "@chakra-ui/react";
+import { Card, CardBody, CardFooter, Image, Text } from "@chakra-ui/react";
 import Link from "next/link";
-import { formatRoute } from "@/lib/helpers/route-formater";
 
 export const CategoryCard: React.FC<CategoryCardProps> = ({ data }) => {
   return (
     <Card
       as={Link}
-      href={`/categories/${formatRoute(data.title)}`}
+      href={`/categories/${data?.id}`}
       cursor="pointer"
-      maxW={{ base: "18rem", lg: "24rem" }}
-      w="full"
+      w={{ base: "18rem", lg: "24rem" }}
     >
       <CardBody
         display="flex"
@@ -38,7 +29,7 @@ export const CategoryCard: React.FC<CategoryCardProps> = ({ data }) => {
         alignItems="center"
         justifyContent="space-between"
       >
-        <Text>{data.title}</Text>
+        <Text>{data.name}</Text>
       </CardFooter>
     </Card>
   );
