@@ -1,9 +1,9 @@
-import { defineStyleConfig } from '@chakra-ui/react'
+import { defineStyleConfig } from "@chakra-ui/react";
 
 const Divider = defineStyleConfig({
   baseStyle: {
-    borderColor: '#DEDFE1',
+    borderColor: "#DEDFE1",
   },
-})
+});
 
-export default Divider
+export default Divider;

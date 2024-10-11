@@ -89,15 +89,15 @@ export const AboutPage = () => {
           maxW={{ base: "auto", md: "50%" }}
           alignSelf={{ base: "start", md: "center" }}
         >
-          About Solarity
+          About Solix
         </Text>
 
         <Text color="gray.5" maxW={{ base: "auto", md: "50%" }}>
-          Welcome to Solarity, where innovation meets sustainability. We
-          specialize in harnessing the power of the sun through state-of-the-art
-          solar panels. At Solarity, we're committed to providing efficient,
-          eco-friendly energy solutions that empower homes and businesses. Join
-          us in embracing a brighter, cleaner future with renewable energy.
+          Welcome to Solix, where innovation meets sustainability. We specialize
+          in harnessing the power of the sun through state-of-the-art solar
+          panels. At Solix, we're committed to providing efficient, eco-friendly
+          energy solutions that empower homes and businesses. Join us in
+          embracing a brighter, cleaner future with renewable energy.
         </Text>
       </Flex>
 
@@ -135,7 +135,7 @@ export const AboutPage = () => {
             Our Goals
           </Text>
           <Text color="gray.5" maxWidth="90%">
-            At Solarity, our goals are anchored in advancing renewable energy
+            At Solix, our goals are anchored in advancing renewable energy
             accessibility and sustainability. We aim to expand our reach, making
             solar solutions accessible to more homes and businesses worldwide.
             We prioritize innovation, continuously enhancing our technology to

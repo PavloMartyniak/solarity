@@ -4,4 +4,5 @@ export type Category = {
   description: string;
   priority: number;
   image: string;
+  slug: string;
 };

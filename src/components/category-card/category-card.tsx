@@ -2,7 +2,7 @@
 import React from "react";
 import { CategoryCardProps } from "./category-card.type";
 import { Card, CardBody, CardFooter, Image, Text } from "@chakra-ui/react";
-import Link from "next/link";
+import { Link } from "@/i18n/routing";
 
 export const CategoryCard: React.FC<CategoryCardProps> = ({ data }) => {
   return (

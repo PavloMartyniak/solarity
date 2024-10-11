@@ -1,0 +1,32 @@
+{
+  "HomePage": {
+    "Banner": {
+      "be": "Be",
+      "independent": "Independent",
+      "with": "with"
+    }
+  },
+
+  "Links": {
+    "products": "products",
+    "solutions": "solutions",
+    "about-us": "about us"
+  },
+
+  "Locales": {
+    "ukrainian": "Ukrainian",
+    "english": "English"
+  },
+
+  "ProductsFilters": {
+    "panelType": "panel type",
+    "glassType": "glass type",
+    "cellType": "cell type",
+    "output": "output",
+    "clearAll": "clear all",
+    "ProductsFiltersOptions": {
+      "unilateral": "unilateral",
+      "bilateral": "bilateral"
+    }
+  }
+}

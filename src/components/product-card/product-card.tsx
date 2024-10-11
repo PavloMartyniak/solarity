@@ -10,7 +10,7 @@ import {
   Image,
   Text,
 } from "@chakra-ui/react";
-import Link from "next/link";
+import { Link } from "@/i18n/routing";
 import { Routes } from "@/lib/constants";
 
 export const ProductCard: React.FC<ProductCardProps> = ({ data }) => {

@@ -1,0 +1,32 @@
+{
+  "HomePage": {
+    "Banner": {
+      "be": "Будь",
+      "independent": "Незалежним",
+      "with": "разом з"
+    }
+  },
+
+  "Links": {
+    "products": "продукти",
+    "solutions": "готові рішення",
+    "about-us": "про нас"
+  },
+
+  "Locales": {
+    "ukrainian": "Українська",
+    "english": "Англійська"
+  },
+
+  "ProductsFilters": {
+    "panelType": "тип панелі",
+    "glassType": "тип скла",
+    "cellType": "тип клітини",
+    "output": "вихід",
+    "clearAll": "очистити все",
+    "ProductsFiltersOptions": {
+      "unilateral": "одностороння",
+      "bilateral": "двостороння"
+    }
+  }
+}

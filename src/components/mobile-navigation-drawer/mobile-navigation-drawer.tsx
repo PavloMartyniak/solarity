@@ -9,7 +9,7 @@ import {
   DrawerOverlay,
   Text,
 } from "@chakra-ui/react";
-import Link from "next/link";
+import { Link } from "@/i18n/routing";
 import { usePathname } from "next/navigation";
 import React from "react";
 
@@ -40,7 +40,7 @@ export const MobileNavigationDrawer = ({
             fontSize={32}
             fontWeight={800}
           >
-            Solarity
+            Solix
           </Text>
         </DrawerHeader>
 
