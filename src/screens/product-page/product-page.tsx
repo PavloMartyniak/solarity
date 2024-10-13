@@ -18,12 +18,10 @@ import {
   Text,
   UnorderedList,
 } from "@chakra-ui/react";
-import { useParams } from "next/navigation";
 import React, { useEffect, useState } from "react";
 
 export const ProductPage = () => {
-  const { product: product_id } = useParams();
-  const { data: product } = useGetProduct(Number(product_id));
+  const { data: product } = useGetProduct();
 
   const [selectedImage, setSelectedImage] = useState<string>();
 
