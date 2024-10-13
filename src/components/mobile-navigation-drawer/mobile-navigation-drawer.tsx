@@ -46,7 +46,7 @@ export const MobileNavigationDrawer = ({
 
         <DrawerBody display="flex" flexDirection="column">
           {links.map((item, idx) => {
-            if (pathname === item.link) {
+            if (pathname.includes(item.link)) {
               return (
                 <Button
                   onClick={onClose}

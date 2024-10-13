@@ -47,19 +47,26 @@ const Page = async ({
   return (
     <HydrationBoundary state={dehydrate(queryClient)}>
       <Grid templateColumns="repeat(12, 1fr)" width="full" height="100%">
-        <GridItem width="full" colSpan={2} borderRightWidth={1}>
+        <GridItem
+          display={{ base: "none", lg: "grid" }}
+          width="full"
+          colSpan={2}
+          borderRightWidth={1}
+        >
           <CategoryList />
         </GridItem>
 
         <GridItem
-          colSpan={10}
+          colSpan={{ base: 12, lg: 10 }}
           overflowY="auto"
           width="full"
           height={`calc(100vh - 60px)`}
         >
-          <ProductsFilter />
+          <Flex overflowX={{ base: "auto", lg: "unset" }}>
+            <ProductsFilter />
+          </Flex>
 
-          <Flex ml={12}>
+          <Flex ml={{ base: "unset", lg: 12 }}>
             <ProductsPage />
           </Flex>
         </GridItem>
