@@ -1,6 +1,6 @@
 import { useQuery, useQueryClient } from "@tanstack/react-query";
 import { PRODUCT, PRODUCTS } from "../constants/query-keys";
-import { useSearchParams } from "next/navigation";
+import { useParams, useSearchParams } from "next/navigation";
 import { Pagination, Product } from "../types";
 import { API } from "../constants/api";
 import api from "./api";
@@ -24,15 +24,16 @@ export const useGetProducts = () => {
   });
 };
 
-export const useGetProduct = (productId: number) => {
+export const useGetProduct = () => {
   const queryClient = useQueryClient();
+  const { product } = useParams();
 
   return useQuery<Product>({
-    queryKey: [PRODUCT],
+    queryKey: [PRODUCT, product],
     queryFn: async () => {
-      const { data } = await api.get(`${API.PRODUCTS}/${productId}`);
+      const { data } = await api.get(`${API.PRODUCTS}/${product}`);
       return data;
     },
-    initialData: () => queryClient.getQueryData([PRODUCT]),
+    initialData: () => queryClient.getQueryData([PRODUCT, product]),
   });
 };
