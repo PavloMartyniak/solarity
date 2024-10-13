@@ -106,7 +106,9 @@ export const Header = () => {
       </Flex>
 
       {/* MOBILE HEADER */}
-      <Flex gap={4} alignItems="center" display={{ base: "flex", md: "none" }}>
+      <Flex alignItems="center" display={{ base: "flex", md: "none" }}>
+        <LanguageSelector />
+
         <Icon
           cursor={"pointer"}
           as={FiAlignRight}

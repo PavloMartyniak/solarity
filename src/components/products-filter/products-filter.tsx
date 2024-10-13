@@ -11,7 +11,7 @@ export const ProductsFilter = () => {
       flex={1}
       borderBottomWidth={1}
       bg="gray.1"
-      position="sticky"
+      position={{ base: "unset", lg: "sticky" }}
       shadow="sm"
       top={0}
       zIndex={1}

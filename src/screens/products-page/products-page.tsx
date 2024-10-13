@@ -1,5 +1,6 @@
 "use client";
 
+import { CategorySelector } from "@/components/category-selector";
 import { ProductCard } from "@/components/product-card";
 import { useGetProducts } from "@/lib/queries/products";
 import { Product } from "@/lib/types/product";
@@ -13,13 +14,15 @@ export const ProductsPage = () => {
 
   return (
     <Flex
-      my={12}
+      my={{ base: 4, lg: 12 }}
       justifyContent={{ base: "center", lg: "start" }}
-      pr={12}
       wrap="wrap"
-      gap={8}
+      gap={4}
       w="full"
     >
+      <Flex flex={1} ml={6} display={{ base: "flex", lg: "none" }}>
+        <CategorySelector />
+      </Flex>
       {products?.map((item, idx) => (
         <ProductCard key={`product-card-${idx}`} data={item} />
       ))}

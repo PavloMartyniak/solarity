@@ -27,7 +27,7 @@ export const CategoryList = () => {
         <Text
           onClick={() => handleSelectCategory(item.slug)}
           cursor="pointer"
-          fontWeight={category === item.id.toString() ? "700" : "400"}
+          fontWeight={category === item.slug ? "700" : "400"}
           key={`category-name-${idx}`}
         >
           {item.name}

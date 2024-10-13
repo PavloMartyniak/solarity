@@ -42,10 +42,13 @@ export const ProductPage = () => {
         templateColumns="repeat(12, 1fr)"
         w="full"
         maxW={{ base: "1200px", lg: "1500px" }}
+        display={{ base: "flex", lg: "grid" }}
+        flexDirection={{ base: "column", lg: "unset" }}
+        gap={4}
       >
         <GridItem colSpan={8}>
-          <Flex gap={4}>
-            <Flex direction="column" gap={4}>
+          <Flex direction={{ base: "column-reverse", lg: "row" }} gap={6}>
+            <Flex direction={{ base: "row", lg: "column" }} gap={4}>
               {product?.images?.map((item) => (
                 <Flex
                   overflow="hidden"
@@ -77,15 +80,17 @@ export const ProductPage = () => {
 
         <GridItem colSpan={4}>
           <Flex direction="column" gap={4}>
-            <Text fontSize={24} fontWeight={400}>
-              {product?.name}
-            </Text>
-            <Text fontWeight={300} fontSize={18}>
-              {product?.description_short}
-            </Text>
-            <Text fontWeight={700} fontSize={24}>
-              {product?.price} $
-            </Text>
+            <Flex direction="column" pl={{ base: 0, lg: 4 }}>
+              <Text fontSize={24} fontWeight={400}>
+                {product?.name}
+              </Text>
+              <Text fontWeight={300} fontSize={18}>
+                {product?.description_short}
+              </Text>
+              <Text fontWeight={700} fontSize={24}>
+                {product?.price} $
+              </Text>
+            </Flex>
 
             <Accordion allowMultiple>
               <AccordionItem>
@@ -119,12 +124,22 @@ export const ProductPage = () => {
               </AccordionItem>
             </Accordion>
 
-            <Text fontSize={24}>
+            <Text pl={{ base: 0, lg: 4 }} fontSize={24}>
               Send an application and we will contact You or give us a call
             </Text>
 
-            <Flex justifyContent="space-between" alignItems="center">
-              <Button variant="primary" rightIcon={<EmailIcon />}>
+            <Flex
+              pl={{ base: 0, lg: 4 }}
+              justifyContent="space-between"
+              alignItems="center"
+              direction={{ base: "column-reverse", lg: "row" }}
+              gap={4}
+            >
+              <Button
+                w={{ base: "full", lg: "fit-content" }}
+                variant="primary"
+                rightIcon={<EmailIcon />}
+              >
                 Send
               </Button>
 
