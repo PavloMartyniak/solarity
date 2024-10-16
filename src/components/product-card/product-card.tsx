@@ -1,31 +1,69 @@
 "use client";
 import React from "react";
 import { ProductCardProps } from "./product-card.type";
-import { Flex, Image, Text } from "@chakra-ui/react";
+import { Button, Card, CardBody, Flex, Image, Text } from "@chakra-ui/react";
 import { Link } from "@/i18n/routing";
 import { Routes } from "@/lib/constants";
+import { FaRegHeart } from "react-icons/fa";
+import { BsCart4 } from "react-icons/bs";
 
 export const ProductCard: React.FC<ProductCardProps> = ({ data }) => {
   return (
-    <Flex
-      as={Link}
-      href={`${Routes.PRODUCTS}/${data?.sku}`}
-      maxW={280}
-      direction="column"
-    >
-      <Flex rounded="xl" borderWidth={1} bg="white" py={4}>
+    <Card overflow="hidden" cursor="pointer" w={{ base: "16rem", lg: "22rem" }}>
+      <CardBody
+        p={{ base: 2, lg: 4 }}
+        overflow="hidden"
+        display="flex"
+        flexDirection="column"
+        as={Link}
+        href={`${Routes.PRODUCTS}/${data?.sku}`}
+        justifyContent="space-between"
+      >
         <Image
-          w="full"
+          placeSelf="center"
           h={280}
-          objectFit="cover"
+          w={280}
           src={data?.images[0]?.image}
           alt="product image"
         />
-      </Flex>
-      <Text ml={2}>{data?.name}</Text>
-      <Text ml={2} fontWeight={700}>
-        {data?.price}
-      </Text>
-    </Flex>
+        <Flex alignItems="end">
+          <Flex flex={1} direction="column" gap={1}>
+            <Text fontWeight={600} fontSize={{ base: "14", md: "18" }}>
+              {data.name}
+            </Text>
+
+            <Text
+              color="gray"
+              fontWeight={400}
+              fontSize={{ base: "12", md: "16" }}
+            >
+              Pylontech
+            </Text>
+
+            <Text fontWeight={600} fontSize={{ base: "14", md: "18" }}>
+              ${data.price}
+            </Text>
+          </Flex>
+          <Button
+            onClick={(e) => e.preventDefault()}
+            bg="none"
+            rounded="full"
+            py={0}
+            px="14px"
+          >
+            <FaRegHeart size={18} />
+          </Button>
+          <Button
+            onClick={(e) => e.preventDefault()}
+            bg="none"
+            rounded="full"
+            py={0}
+            px="14px"
+          >
+            <BsCart4 size={18} />
+          </Button>
+        </Flex>
+      </CardBody>
+    </Card>
   );
 };
