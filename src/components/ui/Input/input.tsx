@@ -16,7 +16,7 @@ const Input: ForwardRefRenderFunction<HTMLInputElement, InputProps> = (
   return (
     <FormControl isInvalid={isInvalid} isDisabled={isDisabled}>
       {label && <FormLabel htmlFor={name}>{label}</FormLabel>}
-      <BaseInput ref={ref} name={name} {...rest} />
+      <BaseInput focusBorderColor="black" ref={ref} name={name} {...rest} />
       <FormErrorMessage>{errorMessage}</FormErrorMessage>
     </FormControl>
   );
