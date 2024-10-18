@@ -28,5 +28,33 @@
       "unilateral": "unilateral",
       "bilateral": "bilateral"
     }
+  },
+
+  "Login": {
+    "email": "Email*",
+    "password": "Password*",
+    "forgotPassword": "Forgot password?",
+    "dontHaveAccount": "Dont have account yet? Create it!",
+    "loginButton": "Login",
+    "loginTitle": "Login"
+  },
+
+  "Register": {
+    "firstName": "First Name*",
+    "lastName": "Last Name*",
+    "email": "Email*",
+    "password": "Password*",
+    "repeatPassword": "Repeat Password*",
+    "selectCity": "Select city*",
+    "registerButton": "Register",
+    "alreadyHaveAccount": "Already have account? Login!",
+    "registerTitle": "Register"
+  },
+
+  "UnAuthModal": {
+    "title": "You are not logged in",
+    "subTitle": "You need to be logged in to perform this action",
+    "goLoginButton": "Go to login",
+    "closeButton": "Close"
   }
 }
