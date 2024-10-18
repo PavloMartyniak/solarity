@@ -1,5 +1,16 @@
 import { Routes } from "@/lib/constants";
-import { Button, Flex, Icon, Text, useDisclosure } from "@chakra-ui/react";
+import {
+  Avatar,
+  Button,
+  Flex,
+  Icon,
+  Menu,
+  MenuButton,
+  MenuItem,
+  MenuList,
+  Text,
+  useDisclosure,
+} from "@chakra-ui/react";
 import { usePathname } from "next/navigation";
 import React, { useEffect, useState } from "react";
 import { FiAlignRight } from "react-icons/fi";
@@ -7,6 +18,7 @@ import { MobileNavigationDrawer } from "../mobile-navigation-drawer";
 import { Link } from "@/i18n/routing";
 import { useTranslations } from "next-intl";
 import { LanguageSelector } from "../ui/language-selector";
+import { ChevronDownIcon } from "@chakra-ui/icons";
 
 export const Header = () => {
   const t = useTranslations("Links");
@@ -28,7 +40,7 @@ export const Header = () => {
       label: t("products"),
       link: Routes.PRODUCTS,
     },
-    // { label: t("solutions"), link: Routes.SOLUTIONS },
+
     {
       label: t("about-us"),
       link: Routes.ABOUT,
@@ -37,7 +49,6 @@ export const Header = () => {
 
   return (
     <Flex
-      // py={small ? 2 : 6}
       userSelect="none"
       h={16}
       px={6}
@@ -70,6 +81,7 @@ export const Header = () => {
         </span>
         olix
       </Text>
+
       {/* DESKTOP HEADER */}
       <Flex gap={4} alignItems="center" display={{ base: "none", md: "flex" }}>
         {links.map((item, idx) => {
@@ -101,6 +113,28 @@ export const Header = () => {
             );
           }
         })}
+
+        <Menu autoSelect={false}>
+          {({ isOpen }) => (
+            <>
+              <MenuButton
+                p={0}
+                bg="unset"
+                _hover={{ bg: "unset" }}
+                _active={{ bg: "unset" }}
+                isActive={isOpen}
+                as={Button}
+              >
+                <Avatar cursor="pointer" size="sm" />
+              </MenuButton>
+              <MenuList>
+                <MenuItem as={Link} href={Routes.LOGIN}>
+                  Login
+                </MenuItem>
+              </MenuList>
+            </>
+          )}
+        </Menu>
 
         <LanguageSelector />
       </Flex>

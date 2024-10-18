@@ -1,7 +1,9 @@
 export enum Routes {
-  HOME = "/",
-  ABOUT = "/about",
   CATEGORIES = "/categories",
   SOLUTIONS = "/solutions",
   PRODUCTS = "/products",
+  REGISTER = "/register",
+  LOGIN = "/login",
+  ABOUT = "/about",
+  HOME = "/",
 }

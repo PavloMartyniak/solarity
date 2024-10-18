@@ -28,5 +28,33 @@
       "unilateral": "одностороння",
       "bilateral": "двостороння"
     }
+  },
+
+  "Login": {
+    "email": "Емейл*",
+    "password": "Пароль*",
+    "forgotPassword": "Забули пароль?",
+    "dontHaveAccount": "Ще не маєте аккаунту? Створіть його!",
+    "loginButton": "Авторизуватися",
+    "loginTitle": "Авторизація"
+  },
+
+  "Register": {
+    "firstName": "Імʼя*",
+    "lastName": "Прізвище*",
+    "email": "Емейл*",
+    "password": "Пароль*",
+    "repeatPassword": "Повторіть Пароль*",
+    "selectCity": "Оберіть місто*",
+    "registerButton": "Зареєструватися",
+    "alreadyHaveAccount": "Вже маєте аккаунт? Увійдіть!",
+    "registerTitle": "Реєстрація"
+  },
+
+  "UnAuthModal": {
+    "title": "Ви не авторизувалися",
+    "subTitle": "Щоб виконати цю дію вам потрібно авторизуватися",
+    "goLoginButton": "Перейти до авторизації",
+    "closeButton": "Закрити"
   }
 }
